@@ -41,7 +41,7 @@ jobs:
           docker images
           docker tag udagram-api-feed ${{ secrets.DOCKER_REPO }}/udagram-api-feed:v1
           docker tag udagram-api-user ${{ secrets.DOCKER_REPO }}/udagram-api-user:v1
-          docker tag udagram-api-frontend ${{ secrets.DOCKER_REPO }}/udagram-frontend:v1
+          docker tag udagram-frontend ${{ secrets.DOCKER_REPO }}/udagram-frontend:v1
           docker tag udagram-reverseproxy ${{ secrets.DOCKER_REPO }}/udagram-reverseproxy:v1
 
       - name: Log in to Docker Hub
@@ -54,5 +54,5 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:v1
           docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:v1
-          docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-frontend:v1
+          docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:v1
           docker push ${{ secrets.DOCKER_USERNAME }}/udagram-reverseproxy:v1
