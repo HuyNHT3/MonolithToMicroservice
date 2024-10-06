@@ -38,9 +38,10 @@ jobs:
 
       - name: Tag Docker Images
         run: |
+          docker images
           docker tag udagram-api-feed ${{ secrets.DOCKER_REPO }}/udagram-api-feed:v1
           docker tag udagram-api-user ${{ secrets.DOCKER_REPO }}/udagram-api-user:v1
-          docker tag udagram-api-frontend ${{ secrets.DOCKER_REPO }}/udagram-api-frontend:v1
+          docker tag udagram-api-frontend ${{ secrets.DOCKER_REPO }}/udagram-frontend:v1
           docker tag udagram-reverseproxy ${{ secrets.DOCKER_REPO }}/udagram-reverseproxy:v1
 
       - name: Log in to Docker Hub
